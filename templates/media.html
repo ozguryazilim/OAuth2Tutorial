@@ -1,0 +1,21 @@
+<div>
+    <img width="300px" height="300px" src="{{ media['url'] }}" alt="">
+</div>
+
+<div>
+    <ul>
+        {% for comment in media['comments'] %}
+        <li>{{ comment["text"] }} <a href="/media/{{ media['id'] }}/comment/{{ comment['id'] }}/delete">Delete</a></li>
+        {% else %}
+        No comments.
+        {% endfor %}
+    </ul>
+</div>
+
+<div>
+    <form action="" method="POST">
+        <label for="comment"></label>
+        <input type="text" placeholder="Enter your comment" id="comment" name="comment">
+        <input type="submit" value="Comment">
+    </form>
+</div>

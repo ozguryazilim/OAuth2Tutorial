@@ -1,0 +1,5 @@
+{% for media in medias %}
+    <a href='/media/{{ media["id"] }}'> <img src='{{ media["url"] }}' alt=""></a>
+{% else %}
+    No photo at all.
+{% endfor %}

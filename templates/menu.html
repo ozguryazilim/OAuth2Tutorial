@@ -1,0 +1,9 @@
+<ul>
+    <li><a href="/">Home /</a></li>
+    {% if authorized %}
+        <li><a href="/my_photos"> My photos /my_photos</a></li>
+        <li><a href="/logout"> Logout /logout</a></li>
+    {% else %}
+        <li><a href="https://api.instagram.com/oauth/authorize/?scope=basic+public_content+follower_list+comments&client_id={{ CLIENT_ID }}&redirect_uri={{ REDIRECT_URI }}&response_type=code"><img src="http://www.gramfeed.com/Instagram_signin.png" alt="Instagram Login"></a></li>
+    {% endif %}
+</ul>
